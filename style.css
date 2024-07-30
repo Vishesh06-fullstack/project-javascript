@@ -1,27 +1,29 @@
-/* family=Roboto:wght@300&family=Ubuntu:wght@300&display=swap'); */
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: 'Roboto', sans-serif; 
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family:  "sans-serif";
 }
+body{
+    background: #333;
+    color : #fff;
+    text-align: center;
 
-.button{
-  width: 66px;
-  padding: 20px;
-  margin: 0 3px;
-  border: 2px solid black;
-  border-radius: 9px;
-  cursor: pointer;
 }
+.btn-box{
+    margin-top: 5rem;
+    height: 4rem;
+    width: 7rem;
+    color: #fff;
+    border-radius: 2rem;
+    border : none;
+    background: #DC143C ;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: "sans-serif";
+    
+}
+.container {
+    margin-top: 3rem;
 
-.row{
-  margin: 8px 0;
-}
-.row input{
-  width: 291px;
-  font-size: 20px;
-    margin: 0;
-    padding: 10px 0px;
-    border: 2px solid black;
-    border-radius: 5px;
 }
