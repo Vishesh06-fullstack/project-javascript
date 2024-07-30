@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tik-Tak-Toe</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="msg-container hide">
-      <p id="msg">Winner</p>
-      <button id="new-btn">New Game</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="navbar">
+        <img src="music/musiclogo.jpg" class="logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SPECIFICATIONS</a></li>
+            <li><a href="#">PRODUCT</a></li>
+            <li><a href="#">CONNECT</a></li>
+            
+        </ul>
     </div>
-    <main>
-      <h1>Tik Tak Toe</h1>
-      <div class="container">
+    <div class="content">
+        <div class="left-col">
+            <h1><br>THE <br>PIECE <br>SOUND</h1>
+        </div>
+        <div class="right-col">
+            <p>click here to listen</p>
+            <img src="music/previousImageees.png" id="previous">
+            <img src="music/pink play button app icon.jpeg" id="icon">
+            <img src="music/forwardImage.jpg" id="forward" >
+        </div>
+    </div>
+    </div>
+    <audio id="mySong">
+    <source src="old_Duplicate-Mere Mehboob.mp3">
+    </audio>
+    <audio id="Songs">
+        <source src="Tumhe Jo Maine Dekha - Main Hoon Na 128 Kbps.mp3">     
+        <source src="Chammak Challo - Ra-One 128 Kbps.mp3">
+        <source src="Saiyaara - Ek Tha Tiger 128 Kbps.mp3"
+    </audio>
+    <!-- <audio id="raone">
+        <source src="Chammak Challo - Ra-One 128 Kbps.mp3">
+    </audio> -->
 
-      <div class="games">
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-        <button class="box"></button>
-      </div>
-    </div>
-    <button id="reset-btn">Reset Game</button>
-    </main>
-    <script src="tiktak.js"></script>
-  </body>
+    <script src="index.js"></script>
+</body>
 </html>

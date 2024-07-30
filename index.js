@@ -1,69 +1,69 @@
-let userScore = 0;
-let compScore = 0;
+const SrkSong = document.getElementById("mySong");
+const icon = document.querySelector("#icon")
+const forward = document.querySelector("#forward");
+const song = document.querySelector("#Songs")
+const raone = document.querySelector("#raone")
+icon.addEventListener("click",function(){
+    if(SrkSong.paused){
+        SrkSong.play();
+        icon.src = "music/pink play button app icon.jpeg";
 
-const choices = document.querySelectorAll(".choice");
-const msg = document.querySelector("#msg");
-
-const userScorePara = document.querySelector("#user-score");
-const compScorePara = document.querySelector("#comp-score");
-
-const genCompChoice = () => {
-    //rock , paper , scissors
-    const option = ["rock" , "paper","scissors"];
-    const randomIndx = Math.floor(Math.random()*3);
-    return option[randomIndx];
-
-}
-const drawGame = () => {
-    msg.innerText = "Game was draw, Play again"
-    msg.style.backgroundColor = "#081b31";
-}
-
-const showWinner = (userWin,userChoice,compChoice) => {
-    if(userWin){
-        userScore++;
-        userScorePara.innerText = userScore;
-        // console.log("Win!");
-        msg.innerText = `You are Winner! Yours ${userChoice} beats ${compChoice}`;
-        msg.style.backgroundColor = "green";
-    } else {
-        compScore++;
-        compScorePara.innerText = compScore;
-        
-        msg.innerText = `You Lose ,Better Luck Next Time ${compChoice} beats your ${userChoice}`;
-        msg.style.backgroundColor = "red";
+    }else{
+        SrkSong.pause();
+        icon.src = "music/pink pause.jpg";
     }
-};
-
-const playGame = (userChoice) => {
-    console.log("user choice ",userChoice)
-    //Generate Computer 
-    const compChoice = genCompChoice();
-    console.log("Comp Choice ",compChoice);
-
-    if (userChoice === compChoice) {
-        //Draw Game
-        drawGame();
-    } else {
-        let userWin = true;
-        if(userChoice === "rock"){
-            userWin = compChoice === "paper" ? false : true;
-    } else if (userChoice === "paper") {
-        // rock , scissor
-        userWin = compChoice === "scissor "? false : true;
-    } else {
-        //rock , paper
-       userWin =  compChoice === "rock" ? false : true;
-    }
-    showWinner(userWin,userChoice,compChoice);
-    }
-};
-
-choices.forEach((choice) => {
-    choice.addEventListener("click" , () => {
-        const userChoice = choice.getAttribute("id")
-        console.log("choice was clicked",userChoice);
-        playGame(userChoice);
-    });
 });
 
+
+
+forward = [
+    "Tumhe Jo Maine Dekha - Main Hoon Na 128 Kbps.mp",
+    "Chammak Challo - Ra-One 128 Kbps.mp3",
+    "Saiyaara - Ek Tha Tiger 128 Kbps.mp3"
+
+
+]
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Shuffling the songs array
+const shuffledSongs = shuffleArray([...forward]);
+
+// Function to play the songs
+function playSongs(forward) {
+    let currentSongIndex = 0;
+
+    function playNextSong() {
+        if (currentSongIndex < forward.length) {
+            const audio = new Audio(forward[currentSongIndex]);
+            audio.play();
+            audio.onended = () => {
+                currentSongIndex++;
+                playNextSong();
+            };
+        } else {
+            console.log('All songs have been played!');
+        }
+    }
+
+    playNextSong();
+}
+
+// Start playing the shuffled songs
+playSongs(shuffledSongs);
+
+    
+
+
+
+
+
+
+// icon.onclick = function(){
+//     SrkSong.play();
+// }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shuffle Songs</title>
+</head>
+<body>
+    <script>
+        // Array of songs
+        const songs = [
+            
+            'Chammak Challo - Ra-One 128 Kbps.mp3',
+            "Tumhe Jo Maine Dekha - Main Hoon Na 128 Kbps.mp3"
+            
+        ];
+
+        // Function to shuffle the array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Shuffling the songs array
+        const shuffledSongs = shuffleArray([...songs]);
+
+        // Function to play the songs
+        function playSongs(songs) {
+            let currentSongIndex = 0;
+
+            function playNextSong() {
+                if (currentSongIndex < songs.length) {
+                    const audio = new Audio(songs[currentSongIndex]);
+                    audio.play();
+                    audio.onended = () => {
+                        currentSongIndex++;
+                        playNextSong();
+                    };
+                } else {
+                    console.log('All songs have been played!');
+                }
+            }
+
+            playNextSong();
+        }
+
+        // Start playing the shuffled songs
+        playSongs(shuffledSongs);
+    </script>
+</body>
+</html>
+
