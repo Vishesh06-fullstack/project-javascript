@@ -1,20 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Password Generator</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-    <h1>Generate <br><span> Random Password</span></h1>
-    <div class="display">
-        <input type="text" id="password"  placeholder="Password">
-        <img src="images/copy.png" onclick="copyPassword()">
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="contact-left"
+      >
+        <div class="contact-left-title">
+          <h2>Get in Touch</h2>
+          <hr />
+        </div>
+        <input type="hidden" name="access_key" value="33c605f0-7866-4a86-a849-5baa48835a0e" />
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          class="contact-inputs"
+          required
+        />
+        <input
+          type="email"
+          name="name"
+          placeholder="Your Email"
+          class="contact-inputs"
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Your message"
+          class="contact-inputs"
+          required
+        ></textarea>
+        <button type="submit">Submit <img src="" alt="" /></button>
+      </form>
+      <div class="contact-right"></div>
+      <img src="images/imagesEmail.jpg" />
     </div>
-    <button onclick="createPassword()"><img src="images/flash.png" alt="click for generate">Generate Password</button>
-    </div>
-<script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>
