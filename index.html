@@ -3,16 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Background-Color</title>
+    <title>Rock Paper Scissor-Game</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Just a Sec The Background Color will Change</h1>
+    <h1>Rock Paper Scissors</h1>
+    <div class="choices">
+      <div class="choice" id="rock"><img src="./images/rock.png"/>
+      </div>
+      <div class="choice" id="paper"><img src = "./images/paper.png"/>
+      </div>
+      <div class="choice" id="scissors"><img src="./images/scissors.png"/>
+      </div>
     </div>
-    <button id="start" class="btn-box">START</button>
-    <button id="stop" class="btn-box">STOP</button>
 
-    <script src="app.js"></script>
+    <div class="score-board">
+      <div class="score">
+        <p id="user-score">0</p>
+        <p>You</p>
+      </div>
+      <div class="score">
+        <p id="comp-score">0</p>
+        <p>Comp</p>
+      </div>
+    </div>
+
+    <div class = "msg-container">
+      <p id="msg">Play Your Move</p>
+    </div>
+    
+
+    <script src="index.js"></script>
   </body>
 </html>
