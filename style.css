@@ -2,82 +2,79 @@
     margin : 0;
     padding : 0;
     box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
 }
-body{
-    font-family: 'outfit';
-    background: linear-gradient(#ffdad5 , #fff7f9);
 
-}
-.container {
-    height : 100vh;
-    display : flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-}
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 20px;
-}
-.contact-left-title h2{
-    font-weight: 600;
-    color: #a363aa;
-    font-size: 40px;
-    margin-bottom: 5px;
-}
-.contact-left-title hr{
-    border: none;
-    width: 120px;
-    height: 5px;
-    background-color: #a363aa;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-.contact-inputs {
-    width: 400px;
-    height: 50px;
-    border: none;
-    outline: none;
-    padding-left: 25px;
-    font-weight: 500;
-    color: #666;
-    border-radius: 50px;
-
-}
-.contact-left textarea{
-    height: 140px;
-    padding-top: 15px;
-    border-radius: 20px;
-
-}.contact-inputs:focus{
-    border: 2px solid #ff994f;
-}
-.contact-inputs:placeholder{
-    color : #a9a9a9;
-}
-.contact-left button{
-    display: flex;
-    align-items: center;
-    padding: 15px 30px;
-    font-size: 16px;
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    /* background: linear-gradient(45deg,#08001f,#30197d); */
     color: #fff;
-    gap : 10px;
-    border : none;
-    border-radius: 50px;
-    background: linear-gradient(270deg,#ff994f,#fa6d86);
-    cursor: pointer;
-}
-.contact-right img{
-    width: 500px;
-}
-@media (max-width:800px) {
-    .contact-inputs{
-        width: 80vw;
+    position: relative;
 
-    }
-    .contact-right{
-        display: none;
-    }
 }
+.container{
+    width : 800px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.clock{
+    width: 100%;
+    height: 100%;
+    background: rgba(235, 0, 255, 0.11);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(40px);
+}
+.container ::before{
+    height: 180px;
+    width: 180px;
+    background : #f41b75;
+    border-radius: 5px;
+    position: absolute;
+    left:-50px;
+    top: -50px;
+    z-index: -1;
+}
+.container ::after{
+    height: 180px;
+    width: 180px;
+    background : #419aff;
+    border-radius: 50%;
+    position: absolute;
+    right:-30px;
+    bottom: -50px;
+    z-index: -1;
+}
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+}
+.clock span ::after{
+    content : 'HOURS';
+    font-size: 16px;
+    position: absolute;
+    bottom: -50px;
+    left: 50px;
+    transform: translateX(-50%);
+}
+#hrs ::after{
+    content: 'HOURS';
+}
+#min ::after{
+    content: 'MINs';
+}
+#sec ::after{
+    content: 'SEC';
+}
+/* .time{
+    display: block;
+} */
